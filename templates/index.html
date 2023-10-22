@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IRS Preparers</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form action="/" method="post">
+        <label for="zip_code">ZIP Code:</label>
+        <input type="text" name="zip_code" required>
+        <label>Sort By:</label>
+        <input type="radio" id="lastname" name="field" value="lastname" checked>
+        <label for="lastname">Last Name</label>
+
+        <input type="radio" id="phone" name="field" value="phone">
+        <label for="phone">Phone Number</label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>List of Preparers in Area Code: {{zip_code}}</h2>
+    <ul>
+        {% for preparer in preparers %}
+            <li> {{ preparer.full_entry }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

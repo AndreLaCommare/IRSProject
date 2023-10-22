@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.log
+*.db
+*.sqlite3
+*.env  # if you use environment variables stored in a .env file
